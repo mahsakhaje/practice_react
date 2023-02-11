@@ -47,6 +47,8 @@ export default function Login() {
               label="password"
               variant="outlined"
               type="password"
+              sx={{m:2}}
+
               {...getFieldProps("password")}
               error={Boolean(touched.password && errors.password)}
               helperText={errors.password}

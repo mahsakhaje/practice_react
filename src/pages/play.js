@@ -3,9 +3,16 @@
 import '../index.css';
 import Button from '@mui/material/Button';
 import { useLocalStorage } from '../logic/localStorage';
+import { useNavigate } from "react-router-dom";
+
 
 export default function Play(props) {
+    let navigate = useNavigate();
+
     // const info = JSON.parse(localStorage.getItem('userInfo'));
+    function handlePlay() {
+        navigate("/game");
+      }
     const {value:userInfo} = useLocalStorage('userInfo')
     const lastScore = JSON.parse(localStorage.getItem('lastScore'));
 
@@ -15,9 +22,10 @@ export default function Play(props) {
             <p className="text-xl font-medium text-black "> عزیز خوش آمدی {JSON.parse(userInfo)?.username}</p>
             <p className="text-slate-500  " m-6>  آخرین امتیاز بدست آورده ی شما: {lastScore ? lastScore : '0'}</p>
 
-            <Button variant="contained">lets play</Button>
+            <Button variant="contained" onClick ={handlePlay}>lets play</Button>
         </div>
     );
+
 
 
 }
