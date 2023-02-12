@@ -25,7 +25,7 @@ function Question  ({ question, options, correctOption })  {
   console.log(options1);
 return (
   <div>
-    <p>{question}</p>
+    <p style={{ margin: 8,color:'blue'}}>{question}</p>
     {options1.map((option, index) => (
         <div>
       <button
@@ -34,7 +34,7 @@ return (
         disabled={answer !== null}
         onClick={() => checkAnswer(option)}
       >
-        {option}
+        {index+1}_{option}
       </button>
       <br/>
       </div>

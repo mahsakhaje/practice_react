@@ -19,7 +19,7 @@ function App() {
             exact
             element={
               <Provider store={store}>
-                <Game />{" "}
+                <Game />
               </Provider>
             }
           />

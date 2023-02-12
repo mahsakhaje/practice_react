@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 export const fetchQuestions = createAsyncThunk('fetchdata',async () => {
+  console.log('called');
 //   const response = await fetch('https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=multiple',{
 
 //   headers: {
@@ -13,6 +14,7 @@ export const fetchQuestions = createAsyncThunk('fetchdata',async () => {
  const response =  await fetch('https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple');
 
   const data = await response.json();
+  console.log(data);
   return data.results;
 })
 const initialState = {

@@ -14,7 +14,7 @@ export default function Play(props) {
         navigate("/game");
       }
     const {value:userInfo} = useLocalStorage('userInfo')
-    const lastScore = JSON.parse(localStorage.getItem('lastScore'));
+    const lastScore = localStorage.getItem('lastScore');
 
 
     return (
